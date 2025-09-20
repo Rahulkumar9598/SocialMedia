@@ -1,14 +1,10 @@
-import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaUserCircle } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
-import { RxHamburgerMenu } from "react-icons/rx";
 import { FaRegHeart } from "react-icons/fa6";
-import MobileNav from './MobileNav';
 const Navbar = () => {
     const [user, setUser] = useState("jk")
-    const [showMobNav, SetMobNavShow] = useState(false)
     return (
         <>
             <nav className='w-full h-15 bg-gradient-to-r from-[#ffb377] to-[#FFABD6] px-2 md:px-4 flex justify-between'>
@@ -38,13 +34,10 @@ const Navbar = () => {
                                 <Link className='text-black  rounded-md px-3 py-2 font-semibold bg-white cursor-pointer hidden md:block'>Sign up</Link>
                             </>
                     }
-                    {/* <button onClick={(e) => SetMobNavShow(!showMobNav)} className='text-white cursor-pointer font-bold md:hidden'><RxHamburgerMenu size={25} className='' /> </button> */}
 
                 </div>
             </nav>
-            {/* {
-                showMobNav && <MobileNav />
-            } */}
+           
 
         </>
     )
