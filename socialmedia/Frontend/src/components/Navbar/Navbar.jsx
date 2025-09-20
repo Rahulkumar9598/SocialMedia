@@ -4,7 +4,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 const Navbar = () => {
-    const [user, setUser] = useState("jk")
+    const [user, setUser] = useState()
     return (
         <>
             <nav className='w-full h-15 bg-gradient-to-r from-[#ffb377] to-[#FFABD6] px-2 md:px-4 flex justify-between'>
