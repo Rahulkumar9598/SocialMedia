@@ -16,7 +16,7 @@ const Login = () => {
         <input type="text" placeholder='Enter your Password' className='border rounded-xl py-3 px-2 w-full flex mt-1 focus:ring-2 focus:ring-blue-500 outline-none' />
         <div className='w-full items-center justify-between flex mt-2'>
         <p className='text-gray-700 text-md '>Forgot Password</p>
-        <p className='text-blue-500 hover:underline'>Sign up</p>
+        <a className='text-blue-500 hover:underline' href='/signup'>Sign up</a>
         </div>
         <button className='w-full bg-gra  bg-gradient-to-r from-[#ffb377] to-[#FFABD6] font-bold border rounded-xl py-3 px-2 mt-3'>Login</button>
     </form>
