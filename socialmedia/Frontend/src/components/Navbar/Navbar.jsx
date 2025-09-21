@@ -1,10 +1,28 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaUserCircle } from "react-icons/fa";
 import { FaSearch } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
+import axios from 'axios';
+import toast from 'react-hot-toast';
 const Navbar = () => {
     const [user, setUser] = useState()
+
+    const getUserDetails = async () => {
+        try {
+            const res = await axios.get("http://localhost:5050/api/user/get-user-details")
+            console.log(res , "this is response")
+            setUser(res?.data?.user)
+        } catch (error) {
+            toast.error(error?.response?.data?.message)
+            console.log(error)
+        }
+    }
+
+    useEffect(() => {
+        axios.defaults.headers.common["authorization"] = localStorage.getItem("authorization")
+        getUserDetails()
+    },[])
     return (
         <>
             <nav className='w-full h-15 bg-gradient-to-r from-[#ffb377] to-[#FFABD6] px-2 md:px-4 flex justify-between'>
@@ -26,7 +44,7 @@ const Navbar = () => {
 
                     {
                         user ? <Link to="/my-account" className='flex items-center h-full gap-2  '>
-                            <p className='text-white font-semibold hidden md:block'>{user}</p>
+                            <p className='text-white font-semibold hidden md:block'>{user?.name}</p>
                             <FaUserCircle className='text-white size-10' />
                         </Link>
                             : <>

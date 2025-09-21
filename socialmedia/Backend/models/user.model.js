@@ -17,7 +17,8 @@ const userSchema = new mongoose.Schema({
     },
     password: {
         type: String,
-        default: ""
+        default: "",
+        select : false
     },
     profilePic: {
         type: String,
@@ -76,7 +77,12 @@ const userSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: "userModel"
         }
-    ]
+    ],
+    otp : {
+        type : Number,
+        default : null,
+        select : false
+    }
 })
 
 const userModel = mongoose.model("userModel" , userSchema)
