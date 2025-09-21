@@ -30,8 +30,8 @@ const Navbar = () => {
                             <FaUserCircle className='text-white size-10' />
                         </Link>
                             : <>
-                                <Link className='text-white border-2 rounded-md px-3 py-[6px] font-semibold border-white cursor-pointer'>Login</Link>
-                                <Link className='text-black  rounded-md px-3 py-2 font-semibold bg-white cursor-pointer hidden md:block'>Sign up</Link>
+                                <Link to='/login' className='text-white border-2 rounded-md px-3 py-[6px] font-semibold border-white cursor-pointer'>Login</Link>
+                                <Link to='/signup' className='text-black  rounded-md px-3 py-2 font-semibold bg-white cursor-pointer hidden md:block'>Sign up</Link>
                             </>
                     }
 
