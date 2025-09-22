@@ -55,7 +55,7 @@ export const handleUserRegister = async (req, res, next) => {
 
 
         return res.status(201).json({
-            message: "User Created",
+            message: "User Created successfully",
             error: false,
             success: true,
             user
