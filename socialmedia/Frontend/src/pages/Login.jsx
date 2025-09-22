@@ -11,6 +11,7 @@ const Login = () => {
     password: ""
   })
   const navigate = useNavigate()
+  console.log("hello")
 
   const handleInputChange = (e) => {
     setData(prev => ({ ...prev, [e.target.name]: e.target.value }))
