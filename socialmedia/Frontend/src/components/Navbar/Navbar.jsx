@@ -5,12 +5,16 @@ import { FaSearch } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa6";
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import api, { base_url } from '../../services/endpoint';
+
 const Navbar = () => {
     const [user, setUser] = useState()
-
+     console.log(base_url);
+     console.log(api.user.getUserDetails,"this is api");
     const getUserDetails = async () => {
         try {
             const res = await axios.get("https://socialmedia-qphp.onrender.com/api/user/get-user-details")
+            
             console.log(res , "this is response")
             setUser(res?.data?.user)
         } catch (error) {
