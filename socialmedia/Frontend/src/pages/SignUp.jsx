@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 import axios from "axios"
 import { useNavigate } from 'react-router-dom'
+import api from '../services/endpoint'
 const SignUp = () => {
   const [loading, setLoading] = useState(false)
   const [data, setData] = useState({
@@ -28,7 +29,7 @@ const SignUp = () => {
     try {
 
       setLoading(true)
-      const res = await axios.post("https://socialmedia-qphp.onrender.com/api/user/register", data)
+      const res = await axios.post(api.user.userRegister, data)
       console.log(res)
       toast.success(res?.data?.message)
       navigate("/login")

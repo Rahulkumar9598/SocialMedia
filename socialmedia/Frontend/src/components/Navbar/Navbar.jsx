@@ -13,7 +13,7 @@ const Navbar = () => {
      console.log(api.user.getUserDetails,"this is api");
     const getUserDetails = async () => {
         try {
-            const res = await axios.get("https://socialmedia-qphp.onrender.com/api/user/get-user-details")
+            const res = await axios.get(api.user.getUserDetails)
             
             console.log(res , "this is response")
             setUser(res?.data?.user)

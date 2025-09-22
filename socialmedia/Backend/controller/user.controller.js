@@ -140,6 +140,8 @@ export const handleGetUserDetails = async (req ,res , next) => {
             })
         }
 
+        console.log("hello world")
+
         return res.status(200).json({
             message : "this is user details",
             error : false,

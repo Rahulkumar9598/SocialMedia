@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import toast from 'react-hot-toast'
 import { useNavigate, useSearchParams } from 'react-router-dom'
+import api from '../services/endpoint'
 
 const Login = () => {
   const [loading , setLoading] = useState(false)
@@ -19,7 +20,7 @@ const Login = () => {
     e.preventDefault()
     try {
       setLoading(true)
-        const res = await axios.post("https://socialmedia-qphp.onrender.com/api/user/login", data)
+        const res = await axios.post(api.user.userLogin, data)
         console.log(res , "this is response") 
         toast.success(res?.data?.message)
         setLoading(false)
