@@ -28,7 +28,7 @@ const SignUp = () => {
     try {
 
       setLoading(true)
-      const res = await axios.post("http://localhost:5050/api/user/register", data)
+      const res = await axios.post("https://socialmedia-qphp.onrender.com/api/user/register", data)
       console.log(res)
       toast.success(res?.data?.message)
       navigate("/login")

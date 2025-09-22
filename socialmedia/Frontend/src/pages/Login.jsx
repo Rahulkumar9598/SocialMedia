@@ -19,7 +19,7 @@ const Login = () => {
     e.preventDefault()
     try {
       setLoading(true)
-        const res = await axios.post("http://localhost:5050/api/user/login", data)
+        const res = await axios.post("https://socialmedia-qphp.onrender.com/api/user/login", data)
         console.log(res , "this is response") 
         toast.success(res?.data?.message)
         setLoading(false)

@@ -10,7 +10,7 @@ const Navbar = () => {
 
     const getUserDetails = async () => {
         try {
-            const res = await axios.get("http://localhost:5050/api/user/get-user-details")
+            const res = await axios.get("https://socialmedia-qphp.onrender.com/api/user/get-user-details")
             console.log(res , "this is response")
             setUser(res?.data?.user)
         } catch (error) {
@@ -21,8 +21,12 @@ const Navbar = () => {
 
     useEffect(() => {
         axios.defaults.headers.common["authorization"] = localStorage.getItem("authorization")
+        if(!localStorage.getItem("authorization")) return
         getUserDetails()
     },[])
+    useEffect(() => {
+        console.log(user)
+    },[user])
     return (
         <>
             <nav className='w-full h-15 bg-gradient-to-r from-[#ffb377] to-[#FFABD6] px-2 md:px-4 flex justify-between'>
